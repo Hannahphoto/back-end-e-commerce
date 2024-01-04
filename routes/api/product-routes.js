@@ -20,7 +20,7 @@ router.get('/', async(req, res) => {
       },
       {
         model: Category,
-        attributes: ["id", "tag_name"]
+        attributes: ["id", "category_name"]
       },
     ],
   });
@@ -86,9 +86,16 @@ router.post('/', async(req, res) => {
 // update product
 router.put('/:id', async(req, res) => {
   try{
+      // Check if the category with the given id exists
+    const existingCategory = await Category.findByPk(req.body.tagIds);
+
+      if (!existingCategory) {
+        return res.status(404).json({ message: 'Category not found' });
+      }
   // update product data
-  const [updatedProduct] = await Product.update(req.body, {
+    const [updatedProduct] = await Product.update(req.body, {
     where: {
+      // tagIds: req.body.tagIds || [],
       id: req.params.id,
     },
   })

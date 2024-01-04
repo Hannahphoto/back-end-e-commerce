@@ -1,10 +1,10 @@
 # back-end-e-commerce
-Build a back-end for an e-commerce site.
+Build a back-end for an e-commerce company.
 
 # User
 FOR A manager at my company
 I WANT a back end for my e-commerce website that uses the latest technologies
-SO THAT my company can compete with other e-commerce companies
+SO THAT my company can compete with other companies.
 
 ## Criteria 
 
@@ -20,3 +20,20 @@ THEN the data for each of these routes is displayed in a formatted JSON
 WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 THEN I am able to successfully create, update, and delete data in my database
 
+## Notes
+
+Ran into an error in my Products PUT route, ill have to fix it another time. 
+
+## GitHub
+
+https://github.com/Hannahphoto/back-end-e-commerce
+
+## Walkthrough Video
+
+https://youtu.be/WXHg5_cpuSI
+
+## Screenshot
+
+<div align="center">
+    <img src="./image/Screenshot_Postman.png" href = "Screenshot of the Postman GET Route." />
+    </div>
