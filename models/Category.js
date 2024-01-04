@@ -2,12 +2,12 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Category extends Model {}
+class Category extends Model { }
 
 Category.init(
   {
     // define columns
-    id:{
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -15,8 +15,15 @@ Category.init(
     },
     category_name: {
       type: DataTypes.STRING,
-      allowNull: false
-      
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'Category name cannot be null.',
+        },
+        notEmpty: {
+          msg: 'Category name cannot be empty.',
+        }
+      },
     },
   },
   {
